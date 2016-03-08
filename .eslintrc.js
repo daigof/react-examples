@@ -1,15 +1,13 @@
 module.exports = {
-  'extends': [
-    'eslint:recommended'
-  ],
+  'extends': ['eslint:recommended'],
   'ecmaFeatures': {
     'arrowFunctions ': true,
-    // 'classes': true,
-    // 'defaultParams ': true,
+    'classes': true,
+    'defaultParams ': true,
     'destructuring': true,
-    // 'generators': true,
-    // 'restParams': true,
-    // 'spread': true,
+    'generators': true,
+    'restParams': true,
+    'spread': true,
     'templateStrings': true,
     'jsx': true,
     'forOf': true,
@@ -30,21 +28,18 @@ module.exports = {
     // 'angular': true
   },
   'rules': {
-    'no-unused-vars': [ 1, {
-      'vars': 'local'
-    } ],
+    'no-unused-vars': [
+      0, {
+        'vars': 'local'
+      }
+    ],
     'no-console': 0,
     'quotes': [
-      2,
-      'single'
+      2, 'single'
     ],
     'indent': [
-      2,
-      2
+      2, 2
     ],
-    'semi': [
-      2,
-      'always'
-    ]
+    'semi': [2, 'always']
   }
 };
