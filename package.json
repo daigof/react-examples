@@ -8,13 +8,14 @@
     "url": "https://github.com/daigof/react-redux.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --content-base dist --inline --hot"
+    "dev": "webpack-dev-server --content-base src --inline --hot"
   },
   "author": "Fortes Diego",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.4.0",
     "babel-loader": "^6.2.1",
+    "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "browser-sync": "^2.11.0",
