@@ -24,6 +24,9 @@ var Header = React.createClass({
     const settingsClass = location.pathname.match(/^\/settings/)
       ? "active"
       : "";
+    const fluxClass = location.pathname.match(/^\/flux/)
+      ? "active"
+      : "";
     const navClass = collapsed
       ? "collapse"
       : "";
@@ -49,6 +52,9 @@ var Header = React.createClass({
               </li>
               <li class={settingsClass}>
                 <Link to="settings" onClick={this.toggleCollapse}>Settings</Link>
+              </li>
+              <li class={fluxClass}>
+                <Link to="flux" onClick={this.toggleCollapse}>Flux Example</Link>
               </li>
             </ul>
           </div>

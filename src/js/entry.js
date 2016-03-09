@@ -7,6 +7,7 @@ import Layout from './pages/Layout';
 import Home from './pages/Home';
 import Settings from './pages/Settings';
 import About from './pages/About';
+import Flux from './pages/Flux';
 
 require('../css/style.css');
 ReactDOM.render(
@@ -15,6 +16,7 @@ ReactDOM.render(
       <IndexRoute component={Home}></IndexRoute>
       <Route component={Settings} path="settings"></Route>
       <Route component={About} path="about"></Route>
+      <Route component={Flux} path="flux"></Route>
     </Route>
   </Router>
   , document.getElementById('app'));
