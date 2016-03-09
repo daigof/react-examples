@@ -8,7 +8,7 @@
     "url": "https://github.com/daigof/react-redux.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --content-base dist --inline --hot"
   },
   "author": "Fortes Diego",
   "license": "MIT",
@@ -26,6 +26,7 @@
     "react-dom": "^0.14.6",
     "react-router": "^2.0.0",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.11"
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
   }
 }

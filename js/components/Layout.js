@@ -5,7 +5,7 @@ class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: 'Initial Title'
+      title: 'Initial Title2'
     };
   }
 
