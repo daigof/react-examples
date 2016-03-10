@@ -28,9 +28,15 @@ var Flux = React.createClass({
     });
     return (
       <div>
-        <button onClick={this.reloadTodos}>Reload</button>
         <h2>Todos List</h2>
         <ul>{Todos}</ul>
+        <div class="row">
+          <div class="col-lg-6"></div>
+          <div class="col-lg-6">
+            <button class="btn btn-info" onClick={this.reloadTodos}>Fetch from server</button>
+          </div>
+
+        </div>
       </div>
     );
   }
