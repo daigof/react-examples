@@ -3,7 +3,7 @@ import React from 'react';
 class RouteParams extends React.Component {
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const {params} = this.props;
     const {query} = this.props.location;
     let queryParams = "";

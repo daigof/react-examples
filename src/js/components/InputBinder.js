@@ -2,19 +2,17 @@ import React, {PropTypes} from 'react';
 
 class InputBinder extends React.Component {
 
-  handleChange(e){
+  handleChange(e) {
     const title = e.target.value;
     this.props.changeTitle(title);
     // console.log(e);
   }
 
+  //You need to explicitly bind(this) when using ES6 class syntax :(
   render() {
     return (
-      <div>
-        <h1>
-          {this.props.title}
-        </h1>
-        <input onChange={this.handleChange.bind(this)} value={this.props.title} />
+      <div>      
+        <input onChange={this.handleChange.bind(this)} value={this.props.title}/>
       </div>
     );
   }

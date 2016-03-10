@@ -17,10 +17,19 @@ var Header = React.createClass({
     this.setState({collapsed});
   },
 
-  goToSettings: function() {
+  //example of programatic link
+  goToSettings: function(e) {
     this.toggleCollapse();
+    // console.log(e);
+    e.preventDefault();
     // console.log(this.context);
-    this.context.router.push({pathname: '/settings', query: {param1:'sadsad',param2:'thisIsALlMightyParam2'}});
+    this.context.router.push({
+      pathname: '/settings',
+      query: {
+        param1: 'sadsad',
+        param2: 'thisIsALlMightyParam2'
+      }
+    });
   },
 
   toggleDropdownOpen: function(e) {
@@ -36,7 +45,7 @@ var Header = React.createClass({
     const homeClass = location.pathname === "/"
       ? "active"
       : "";
-    const reactClass = location.pathname.match(/^\/react/)
+    const reactClass = location.pathname.match(/^\/react-*/)
       ? "active"
       : "";
     const settingsClass = location.pathname.match(/^\/settings/)
@@ -84,6 +93,11 @@ var Header = React.createClass({
                       query: queryParams
                     }} onClick={this.toggleDropdownOpen}>Route Params & Query</Link>
                   </li>
+                  <li>
+                    <Link to={{
+                      pathname: 'react-input-page'
+                    }} onClick={this.toggleDropdownOpen}>Input Page</Link>
+                  </li>
 
                   {/*
                   <li role="separator" class="divider"></li>
@@ -92,7 +106,7 @@ var Header = React.createClass({
                 </ul>
               </li>
               <li class={settingsClass}>
-                <a onClick={this.goToSettings}>Settings</a>
+                <a href="#" onClick={this.goToSettings}>Settings</a>
               </li>
               <li class={fluxClass}>
                 <Link to="flux" onClick={this.toggleCollapse}>Flux Example</Link>
