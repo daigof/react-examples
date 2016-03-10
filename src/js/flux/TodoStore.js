@@ -2,6 +2,8 @@ import {EventEmitter} from "events";
 
 import dispatcher from "./Dispatcher";
 
+import {findIndex} from "lodash";
+
 class TodoStore extends EventEmitter {
   constructor() {
     super();
@@ -20,10 +22,11 @@ class TodoStore extends EventEmitter {
 
   createTodo(text) {
     const id = Date.now();
-
     this.todos.push({id, text, complete: false});
-
-    this.emit("change");
+  }
+  completeTodo(id) {
+    const todoIndex = findIndex(this.todos, (i) => i.id === id);
+    this.todos[todoIndex].complete = true;
   }
 
   getAll() {
@@ -32,15 +35,24 @@ class TodoStore extends EventEmitter {
 
   handleActions(action) {
     switch (action.type) {
-    case "CREATE_TODO":
-      {
-        this.createTodo(action.text);
-      }
-    case "RECEIVE_TODOS":
-      {
-        this.todos = action.todos;
-        this.emit("change");
-      }
+      case "CREATE_TODO":
+        {
+          this.createTodo(action.text);
+          this.emit("change");
+          break;
+        }
+      case "RECEIVE_TODOS":
+        {
+          this.todos = action.todos;
+          this.emit("change");
+          break;
+        }
+      case "COMPLETE_TODO":
+        {
+          this.completeTodo(action.id);
+          this.emit("change");
+          break;
+        }
     }
   }
 

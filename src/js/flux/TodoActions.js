@@ -13,6 +13,12 @@ export function deleteTodo(id) {
     id
   });
 }
+export function completeTodo(id) {
+  dispatcher.dispatch({
+    type: "COMPLETE_TODO",
+    id
+  });
+}
 
 export function reloadTodos() {
   // axios("http://someurl.com/somedataendpoint").then((data) => {
