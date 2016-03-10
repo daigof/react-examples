@@ -3,8 +3,13 @@ var PropTypes = React.PropTypes;
 import {IndexLink, Link} from "react-router";
 
 var Header = React.createClass({
+  //to Allow programmatic navigation
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
   getInitialState: function() {
-    return {collapsed: true};
+    return {collapsed: true, dropdownOpen: false};
   },
 
   toggleCollapse: function() {
@@ -12,13 +17,26 @@ var Header = React.createClass({
     this.setState({collapsed});
   },
 
+  goToSettings: function() {
+    this.toggleCollapse();
+    // console.log(this.context);
+    this.context.router.push({pathname: '/settings', query: {param1:'sadsad',param2:'thisIsALlMightyParam2'}});
+  },
+
+  toggleDropdownOpen: function(e) {
+    // e.preventDefault();
+    // console.log(e);
+    const dropdownOpen = !this.state.dropdownOpen;
+    this.setState({dropdownOpen});
+  },
+
   render: function() {
     const {location} = this.props;
-    const {collapsed} = this.state;
+    const {collapsed, dropdownOpen} = this.state;
     const homeClass = location.pathname === "/"
       ? "active"
       : "";
-    const aboutClass = location.pathname.match(/^\/about/)
+    const reactClass = location.pathname.match(/^\/react/)
       ? "active"
       : "";
     const settingsClass = location.pathname.match(/^\/settings/)
@@ -30,6 +48,13 @@ var Header = React.createClass({
     const navClass = collapsed
       ? "collapse"
       : "";
+    const dropdownClass = dropdownOpen
+      ? "open"
+      : "";
+    const queryParams = {
+      name: "Diego",
+      lastName: "Fortes"
+    };
 
     return (
       <div class="navbar navbar-default navbar-fixed-top">
@@ -47,11 +72,27 @@ var Header = React.createClass({
               <li class={homeClass}>
                 <IndexLink to="/" onClick={this.toggleCollapse}>Home</IndexLink>
               </li>
-              <li class={aboutClass}>
-                <Link to="about" onClick={this.toggleCollapse}>About</Link>
+              <li class={"dropdown " + dropdownClass + " " + reactClass}>
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded={dropdownOpen} onClick={this.toggleDropdownOpen}>
+                  React Examples
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <Link to={{
+                      pathname: 'react-route-params/33',
+                      query: queryParams
+                    }} onClick={this.toggleDropdownOpen}>Route Params & Query</Link>
+                  </li>
+
+                  {/*
+                  <li role="separator" class="divider"></li>
+                */}
+
+                </ul>
               </li>
               <li class={settingsClass}>
-                <Link to="settings" onClick={this.toggleCollapse}>Settings</Link>
+                <a onClick={this.goToSettings}>Settings</a>
               </li>
               <li class={fluxClass}>
                 <Link to="flux" onClick={this.toggleCollapse}>Flux Example</Link>
