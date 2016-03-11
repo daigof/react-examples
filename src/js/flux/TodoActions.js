@@ -1,3 +1,9 @@
+/*
+ACTIONS:
+  Simple object dispatch to a dispatcher an action.type and action.data
+  May fetch new data before disptaching the action but not good place to do calculations
+*/
+
 import dispatcher from "./Dispatcher";
 
 export function createTodo(text) {
@@ -13,6 +19,7 @@ export function deleteTodo(id) {
     id
   });
 }
+
 export function completeTodo(id) {
   dispatcher.dispatch({
     type: "COMPLETE_TODO",
@@ -29,7 +36,7 @@ export function reloadTodos() {
     dispatcher.dispatch({type: "RECEIVE_TODOS", todos: [
       {
         id: 8484848484,
-        text: "New todo2",
+        text: "New todo fetched from server",
         complete: false
       },
       {
