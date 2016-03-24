@@ -20,15 +20,13 @@ export default class Todo extends React.Component {
       <li>
         <span class={complete
           ? 'text-success'
-          : 'text-primary'}>{text}</span>
+        : 'text-primary'}>{text}</span>
         &nbsp;&nbsp;
         <span class={complete
           ? 'text-success'
-          : 'text-danger'}
-          style={{
-            cursor: 'pointer'
-          }}
-        onClick={this.handleClick.bind(this)}>{icon}</span>
+        : 'text-danger'} style={{
+          cursor: 'pointer'
+        }} onClick={this.handleClick.bind(this)}>{icon}</span>
       </li>
     );
   }

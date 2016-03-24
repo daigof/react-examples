@@ -65,7 +65,9 @@ var Flux = React.createClass({
             <button class="btn btn-info btn-block" onClick={this.reloadTodos}>Fetch from server</button>
           </div>
           <div class="col col-sm-4">
-            <div class="alert alert-success" style={{marginTop:24}}>
+            <div class="alert alert-success" style={{
+              marginTop: 24
+            }}>
               {notif.text}
             </div>
           </div>

@@ -98,6 +98,11 @@ var Header = React.createClass({
                       pathname: 'react-input-page'
                     }} onClick={this.toggleDropdownOpen}>Input Page</Link>
                   </li>
+                  <li>
+                    <Link to={{
+                      pathname: 'react-prop-page'
+                    }} onClick={this.toggleDropdownOpen}>PropTypes</Link>
+                  </li>
 
                   {/*
                   <li role="separator" class="divider"></li>

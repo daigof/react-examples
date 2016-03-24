@@ -9,6 +9,7 @@ import Settings from './pages/Settings';
 import RouteParams from './pages/RouteParams';
 import Flux from './pages/Flux';
 import InputPage from './pages/InputPage';
+import PropTypesPage from './pages/PropTypesPage';
 
 require('../css/style.css');
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Route component={Settings} path="settings"></Route>
     <Route component={RouteParams} path="react-route-params/:exId"></Route>
     <Route component={InputPage} path="react-input-page"></Route>
+    <Route component={PropTypesPage} path="react-prop-page"></Route>
     <Route component={Flux} path="flux"></Route>
   </Route>
 </Router>, document.getElementById('app'));
