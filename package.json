@@ -24,9 +24,16 @@
     "lodash": "^3.10.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "react-redux": "^4.4.1",
     "react-router": "^2.0.0",
+    "redux": "^3.3.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.1.1",
+    "redux-devtools-dock-monitor": "^1.1.0",
+    "redux-devtools-log-monitor": "^1.0.5"
   }
 }
