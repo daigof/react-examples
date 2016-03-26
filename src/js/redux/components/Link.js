@@ -2,17 +2,18 @@ import React, {PropTypes} from 'react'
 
 const Link = ({active, children, onClick}) => {
   if (active) {
-    return <span>{children}</span>
+    return <button className='btn btn-success btn-xs active disabled'>{children}</button>
   }
 
   return (
-    <a href='#'
+    <button href='#'
+      className='btn btn-primary btn-xs'
       onClick={e => {
         e.preventDefault()
         onClick()
       }}>
       {children}
-    </a>
+    </button>
   )
 }
 

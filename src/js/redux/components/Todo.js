@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react'
 
 const Todo = ({onClick, completed, text}) => (
-  <li
-    onClick={onClick}
+  <li onClick={onClick}
+    className={completed
+      ? 'text-success'
+    : 'text-danger'}
     style={{
-      textDecoration: completed
-      ? 'line-through'
-      : 'none'
+      'cursor': 'pointer'
     }}>
     {text}
   </li>

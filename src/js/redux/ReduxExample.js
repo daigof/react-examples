@@ -1,8 +1,8 @@
 import React from 'react'
 import {Provider} from 'react-redux'
 import {createStore, compose} from 'redux'
-import todoApp from './reducers'
-import App from './components/App'
+import appReducer from './reducers'
+import TodoApp from './components/TodoApp'
 import DevTools from './containers/DevTools'
 
 const enhancer = compose(
@@ -12,7 +12,7 @@ const enhancer = compose(
   DevTools.instrument()
 )
 
-let store = createStore(todoApp, {}, enhancer)
+let store = createStore(appReducer, {}, enhancer)
 
 // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
 if (module.hot) {
@@ -26,7 +26,9 @@ class ReduxExample extends React.Component {
   render () {
     return (
       <Provider store={store}>
-        <App/>
+        <div className='container'>
+          <TodoApp/>
+        </div>
       </Provider>
     )
   }
