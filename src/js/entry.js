@@ -14,11 +14,12 @@ require('../css/style.css')
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path='/' component={Layout}>
-      <IndexRoute component={Home} />
-      <Route component={RouteParams} path='react-route-params/:exId' />
-      <Route component={InputPage} path='react-input-page' />
-      <Route component={PropTypesPage} path='react-prop-page' />
-      <Route component={ReduxExample} path='redux' />
-      <Route component={Flux} path='flux' />
+      <IndexRoute component={Home}/>
+      <Route component={RouteParams} path='react-route-params/:exId'/>
+      <Route component={InputPage} path='react-input-page'/>
+      <Route component={PropTypesPage} path='react-prop-page'/>
+      <Route component={ReduxExample} path='redux'/>
+      <Route component={Flux} path='flux'/>
     </Route>
-</Router>, document.getElementById('app'))
+  </Router>, document.getElementById('app')
+)

@@ -1,18 +1,25 @@
 module.exports = {
   'extends': ['eslint:recommended'],
-  'ecmaFeatures': {
-    'arrowFunctions ': true,
-    'classes': true,
-    'defaultParams ': true,
-    'destructuring': true,
-    'generators': true,
-    'restParams': true,
-    'spread': true,
-    'templateStrings': true,
-    'jsx': true,
-    'forOf': true,
-    'blockBindings': true,
-    'modules': true
+  // 'ecmaFeatures': {
+  //   'arrowFunctions ': true,
+  //   'classes': true,
+  //   'defaultParams ': true,
+  //   'destructuring': true,
+  //   'generators': true,
+  //   'restParams': true,
+  //   'spread': true,
+  //   'templateStrings': true,
+  //   'jsx': true,
+  //   'forOf': true,
+  //   'blockBindings': true,
+  //   'modules': true
+  // },
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'ecmaFeatures': {
+      'jsx': true
+    },
+    'sourceType': 'module'
   },
   'env': {
     // 'jquery': true,
@@ -39,7 +46,6 @@ module.exports = {
     ],
     'indent': [
       2, 2
-    ],
-    'semi': [2, 'always']
+    ]
   }
 };

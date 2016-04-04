@@ -3,6 +3,7 @@ import {Provider} from 'react-redux'
 import {createStore, compose, applyMiddleware} from 'redux'
 import appReducer from './reducers'
 import TodoApp from './components/TodoApp'
+import GithubApp from './components/GithubApp'
 import DevTools from './containers/DevTools'
 import ReduxThunk from 'redux-thunk'
 
@@ -17,18 +18,16 @@ let store = createStore(appReducer, {}, enhancer)
 
 // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
 if (module.hot) {
-  module
-    .hot
-    .accept('./reducers', () => store.replaceReducer(require('./reducers')))
+  module.hot.accept('./reducers', () => store.replaceReducer(require('./reducers')))
 }
 
 class ReduxExample extends React.Component {
-
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <div className='container'>
           <TodoApp/>
+          <GithubApp/>
           <DevTools/>
         </div>
       </Provider>
