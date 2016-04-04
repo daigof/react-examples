@@ -27,6 +27,7 @@
     "react-redux": "^4.4.1",
     "react-router": "^2.0.0",
     "redux": "^3.3.1",
+    "redux-thunk": "^2.0.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1"

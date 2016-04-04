@@ -2,7 +2,6 @@ import React from 'react'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
-import DevTools from '../containers/DevTools'
 
 const TodoApp = () => (
   <div className='panel panel-default'>
@@ -11,7 +10,6 @@ const TodoApp = () => (
       <AddTodo/>
       <VisibleTodoList/>
       <Footer/>
-      <DevTools/>
     </div>
   </div>
 )
